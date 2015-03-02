@@ -6,7 +6,8 @@
 
 %h2= link_to(@establishment.user.first_name, user_path(@establishment.user.id))
 
-.reviews
+= hidden_field :establishment_id, value: @establishment.id
+%input.establishment{name: 'establishment_id', type: 'hidden', value: @establishment.id }
 
 
 
