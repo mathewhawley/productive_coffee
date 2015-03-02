@@ -1,7 +1,11 @@
 class ReviewsController < ApplicationController
+  
   def new
-    @establishments = Establishment.all
+    @establishment = Establishment.find(params[:establishment_id])
     @review = Review.new
+  end
+
+  def create
   end
 
 end
