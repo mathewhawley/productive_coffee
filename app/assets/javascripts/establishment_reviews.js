@@ -1,10 +1,15 @@
 $(document).ready(function(){
   $.ajax({
-    url: '/establishments/' + $('.establishment').val(),
-    type: 'GET',
-    dataType: 'json'
+    url: '/establishments/reviews',
+    type: 'POST',
+    dataType: 'json',
+    data: {establishment: {id: $('.establishment').val()}}
   })
   .done(function(response) {
-      console.log(response);
+    // var reviews = response.reviews
+    console.log(response);
+    // $.each(reviews, function(index, review){
+    //   console.log(review.content);
+    // });
   });
 });
