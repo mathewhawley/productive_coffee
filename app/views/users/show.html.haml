@@ -1,0 +1,9 @@
+%h1= @user.first_name + ' ' + @user.last_name
+%p= @user.bio
+%ul 
+  %li= @user.occupation
+  %li= @user.email
+
+%h2 Establishments added:
+- @user.establishments.each do |establishment|
+  %h3= establishment.name
