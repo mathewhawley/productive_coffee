@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :establishments
   match 'establishments/reviews' => 'establishments#reviews', via: [:post]
   resources :users, only: [:show]
+  resources :establishments do
+    resources :reviews
+  end
 
   
   # The priority is based upon order of creation: first created -> highest priority.
