@@ -4,6 +4,7 @@
 %h3= @establishment.phone_number
 %h3= @establishment.email
 #overall-rating
+  %h2= "Overall Rating: #{@overall_rating}"
 
 %h2= link_to(@establishment.user.first_name, user_path(@establishment.user.id))
 %h2 Reviews
