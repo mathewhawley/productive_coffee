@@ -7,5 +7,9 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
+    %nav
+      %form#search
+        %input#search-keyword{ placeholder: 'Search' }
+        %input{ type: 'submit', value: 'Submit' }
     %h1 Welcome
     = yield

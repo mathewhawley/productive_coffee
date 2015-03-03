@@ -11,4 +11,7 @@ class EstablishmentsController < ApplicationController
   def show
     @establishment = Establishment.find(params[:id])
   end
+
+  def search
+  end
 end
