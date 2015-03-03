@@ -7,6 +7,8 @@ class ReviewsController < ApplicationController
 
   def create
     @establishment = Establishment.find(params[:establishment_id])
+    binding.pry
+    nil
     @review = Review.create(review_params)
     if @review.save
       redirect_to "/establishments/#{@establishment.id}"
