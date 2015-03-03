@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title ProductiveCoffee
+    %script{ type: 'text/javascript', src: 'https://maps.googleapis.com/maps/api/js?libraries=places' }
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -12,5 +13,3 @@
       = form_tag('/search', method: :get) do
         = text_field_tag :q, nil, placeholder: 'Search establishments'
     = yield
-
-    %script{ type: 'text/javascript', src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAM4oDKRxYIRC_Oi3lbX9xb5n6GG_j3WQw&sensor=false&libraries=places' }
