@@ -7,5 +7,8 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    %h1 Welcome
+    %nav
+      %h2.logo Productive Coffee
+      = form_tag('/search', method: :get) do
+        = text_field_tag :q, nil, placeholder: 'Search establishments'
     = yield

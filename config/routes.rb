@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :establishments
   match 'establishments/reviews' => 'establishments#reviews', via: [:post]
   resources :users, only: [:show]
+  get '/search', to: "search#index"
   resources :establishments do
     resources :reviews
   end
