@@ -13,7 +13,4 @@
       = form_tag('/search', method: :get) do
         = text_field_tag :q, nil, placeholder: 'Search establishments'
     #map-canvas
-    #results
-    %input.form-control{id: "place", name:"place", placeholder:"apartment name",type:"text", value:""}
-    %output
     = yield
