@@ -12,4 +12,10 @@
       %h2.logo Productive Coffee
       = form_tag('/search', method: :get) do
         = text_field_tag :q, nil, placeholder: 'Search establishments'
+    #map-canvas
     = yield
+
+
+  %script{type: "text/javascript", src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyAokpqGvI0DjXwQHXQk9gjcnCH77RIoIDA&libraries=places"}
+
+  
