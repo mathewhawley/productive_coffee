@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
   def index
-    search_establishments
+    @search = Establishment.search(name_cont: params[:q])
+    @results = @search.result
   end
 end

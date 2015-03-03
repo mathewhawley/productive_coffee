@@ -8,7 +8,7 @@
     = csrf_meta_tags
   %body
     %nav
+      %h2.logo Productive Coffee
       = form_tag('/search', method: :get) do
         = text_field_tag :q, nil, placeholder: 'Search establishments'
-    %h1 Welcome
     = yield
