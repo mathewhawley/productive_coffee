@@ -22,7 +22,7 @@ $(document).ready(function() {
 
   var service = new google.maps.places.PlacesService(apiSearchResults);
 
-  $('#search-api').on('keypress', function(e) {
+  $('.search-input').on('keypress', function(e) {
     if (e.which === 13) service.nearbySearch(request, callback)
   })
 
