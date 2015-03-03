@@ -16,5 +16,4 @@ class Review < ActiveRecord::Base
     total = values.map {|value| value.to_i}.inject(:+).to_f
     average = (total/values.length).round(0)
   end
-
 end
