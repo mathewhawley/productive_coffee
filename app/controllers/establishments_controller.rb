@@ -18,4 +18,11 @@ class EstablishmentsController < ApplicationController
     @service_rating = @establishment.average_ratings(:service)
     @noise_level_rating = @establishment.average_ratings(:noise_level)
   end
+
+  def create
+    binding.pry
+    @establishment = Establishment.create params.require(:establishment).permit(:name, :address, :place_id, :lat, :long)
+    render json: @establishment, status: :created
+  end
+
 end
