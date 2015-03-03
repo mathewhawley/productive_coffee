@@ -10,6 +10,6 @@ class EstablishmentsController < ApplicationController
 
   def show
     @establishment = Establishment.find(params[:id])
-    @overall_rating = @establishment.establishment_ratings(:overall_rating)
+    @overall_rating = @establishment.average_ratings(:overall_rating)
   end
 end
