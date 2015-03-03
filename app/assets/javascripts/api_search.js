@@ -11,7 +11,7 @@ $(document).ready(function() {
       for (var i = 0; i < results.length; i++) {
         var place = results[i];
         console.log(place);
-        $('<h2>' + place.name + '</h2>' + '<p>' + place.vicinity + '</p>' + '<button id="add-cafe">Add Cafe</button>' ).appendTo('#api-search-results');
+        $('<div>' + '<h2>' + place.name + '</h2>' + '<p>' + place.vicinity + '</p>' + '<button id="add-cafe">Add Cafe</button>' + '</div>' ).appendTo('#api-search-results');
       }
     }
   }
@@ -29,6 +29,11 @@ $(document).ready(function() {
       service.nearbySearch(request, callback);
       $('#database-search-results').hide();
     }
+  });
+
+  $('#api-search-results').on('click', '#add-cafe', function() {
+    console.log($(this).siblings());
+    console.log('clicked');
   });
 
 });
