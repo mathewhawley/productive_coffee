@@ -8,8 +8,7 @@
     = csrf_meta_tags
   %body
     %nav
-      %form#search
-        %input#search-keyword{ placeholder: 'Search' }
-        %input{ type: 'submit', value: 'Submit' }
+      = form_tag('/search', method: :get) do
+        = text_field_tag :q, nil, placeholder: 'Search establishments'
     %h1 Welcome
     = yield
