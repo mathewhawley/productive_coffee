@@ -3,6 +3,7 @@ class EstablishmentsController < ApplicationController
 
   def index
     @establishments = Establishment.all.order('created_at DESC')
+    @overall_rating = @establishment.average_ratings(:overall_rating)
   end
 
   def show
@@ -20,7 +21,8 @@ class EstablishmentsController < ApplicationController
   end
 
   def create
-    @establishment = Establishment.create params.require(:establishment).permit(:name, :address, :place_id, :lat, :long)
+    @establishment = Establishment.create params.require(:establishment).permit(:name, :address, :place_id, :lat, :long, :user_id)
+    @establishment.update_attributes(user_id: current_user.id)
     if @establishment.save
       respond_to do |format|
         format.html { redirect_to @establishment}

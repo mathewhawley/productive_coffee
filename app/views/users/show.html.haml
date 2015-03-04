@@ -8,5 +8,5 @@
 
 %h2 Establishments added:
 - @user.establishments.each do |establishment|
-  %h3= link_to(establishment.name)
+  %h3= link_to("#{establishment.name}#{establishment.id}", establishment_path)
 
