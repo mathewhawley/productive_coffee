@@ -1,8 +1,11 @@
-%h2 All establishments
-
-#all-establishments
-  - @establishments.each do |establishment|
-    .establishment-card
-      %h3= link_to establishment.name, establishment_path(establishment)
-      %p= "Description: #{establishment.description}"
-      %p= "Address: #{establishment.address}"
+#wrapper
+  %h2{ :class => 'page-header' } All establishments
+  %hr
+  #all-establishments
+    - @establishments.each do |establishment|
+      .establishment-card
+        = image_tag 'http://lorempixel.com/400/300/food'
+        %h3= link_to establishment.name, establishment_path(establishment)
+        - if establishment.description
+          %p= "Description: #{establishment.description}"
+        %p= "Address: #{establishment.address}"

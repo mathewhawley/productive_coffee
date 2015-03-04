@@ -1,0 +1,30 @@
+/* Establishment Index Page Styles */
+
+.page-header {
+  margin: 0 0 1rem 0;
+  font-weight: lighter;
+}
+
+#all-establishments {
+  font-size: 0;
+}
+
+.establishment-card {
+  vertical-align: top;
+  display: inline-block;
+  padding: 1rem;
+  background-color: #ccc;
+  width: 32.3%;
+  border-radius: .2rem;
+  margin: 0 1.55% 1rem 0;
+  transition: .5s;
+}
+
+.establishment-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.establishment-card:hover {
+  background-color: #000;
+  transition: .5s;
+}
