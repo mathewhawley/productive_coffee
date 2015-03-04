@@ -32,7 +32,7 @@ $(document).ready(function(){
           title: establishment.name
         });
 
-        var infoWindowContent = '<div id="info-window-content">' + '<p>' + establishment.name + '</p>' + '</div>';
+        var infoWindowContent = '<div id="info-window-content">' + '<h3>' + establishment.name + '</h3>' + '</div>';
 
         var infowindow = new google.maps.InfoWindow({
             content: infoWindowContent
@@ -40,6 +40,7 @@ $(document).ready(function(){
 
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.open(map, marker);
+
         });
       });
     });
