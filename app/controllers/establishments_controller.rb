@@ -20,9 +20,9 @@ class EstablishmentsController < ApplicationController
   end
 
   def create
-    binding.pry
     @establishment = Establishment.create params.require(:establishment).permit(:name, :address, :place_id, :lat, :long)
-    render json: @establishment, status: :created
+    # render json: @establishment, status: :created
+    redirect_to @establishment
   end
 
 end

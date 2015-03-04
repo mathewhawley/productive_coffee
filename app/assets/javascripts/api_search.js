@@ -13,7 +13,6 @@ $(document).ready(function() {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
         var place = results[i];
-        console.log(place);
         $('<div>' + '<h2>' + place.name + '</h2>' + '<p>' + place.vicinity + '</p>' + '<button data-id="' + i + '"' + 'id="add-cafe">Add Cafe</button>' + '</div>' ).appendTo('#api-search-results');
       }
     }
@@ -35,17 +34,13 @@ $(document).ready(function() {
   });
 
   $('#api-search-results').on('click', '#add-cafe', function() {
-    // console.log($(this).siblings());
     var establishmentId = $(this).data('id');
     var object = response[establishmentId];
-    console.log(object);
     $.ajax({
       url: '/establishments',
       type: 'POST',
       dataType: 'json',
       data: { establishment: { name: object.name, address: object.vicinity, place_id: object.place_id, lat: object.geometry.location.k, long: object.geometry.location.D } }
-    }).done(function() {
-      console.log('done?');
     });
   });
 
