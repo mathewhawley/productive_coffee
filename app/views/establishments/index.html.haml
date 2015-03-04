@@ -3,9 +3,10 @@
   %hr
   #all-establishments
     - @establishments.each do |establishment|
-      .establishment-card
-        = image_tag 'http://lorempixel.com/400/300/food'
-        %h3= link_to establishment.name, establishment_path(establishment)
-        - if establishment.description
-          %p= "Description: #{establishment.description}"
-        %p= "Address: #{establishment.address}"
+      %a{:href => "#{establishment_path(establishment)}"}
+        %article.establishment-card
+          = image_tag 'http://lorempixel.com/400/300/food'
+          %h3= establishment.name
+          - if establishment.description
+            %p= establishment.description
+          %p= establishment.address

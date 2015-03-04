@@ -9,22 +9,31 @@
   font-size: 0;
 }
 
+#all-establishments a {
+  display: inline-block;
+  width: 32.3%;
+  margin: 0 1.55% 1rem 0;
+  color: #000;
+}
+
+#all-establishments a:nth-child(3n) {
+  margin-right: 0;
+}
+
 .establishment-card {
   vertical-align: top;
   display: inline-block;
   padding: 1rem;
-  background-color: #ccc;
-  width: 32.3%;
+  background-color: #fff;
   border-radius: .2rem;
-  margin: 0 1.55% 1rem 0;
-  transition: .5s;
-}
-
-.establishment-card:nth-child(3n) {
-  margin-right: 0;
+  transition: .4s;
 }
 
 .establishment-card:hover {
-  background-color: #000;
-  transition: .5s;
+  background-color: #e3e3e3;
+  transition: .4s;
+}
+
+.establishment-card img {
+  margin-bottom: .75rem;
 }
