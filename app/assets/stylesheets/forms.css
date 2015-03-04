@@ -1,0 +1,16 @@
+#form-area {
+  width: 450px;
+  margin: 3rem auto 0;
+}
+
+#form-area h2 {
+  font-weight: lighter;
+}
+
+.field label {
+  margin-bottom: .5rem;
+}
+
+#devise-button {
+  font-size: 1rem;
+}
