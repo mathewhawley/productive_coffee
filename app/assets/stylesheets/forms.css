@@ -1,6 +1,6 @@
 #form-area {
   width: 450px;
-  margin: 3rem auto 0;
+  margin: 3rem auto;
 }
 
 #form-area h2 {
@@ -11,6 +11,11 @@
   margin-bottom: .5rem;
 }
 
+.field textarea {
+  margin-bottom: 1rem;
+}
+
 #devise-button {
   font-size: 1rem;
+  margin-bottom: .7rem;
 }
