@@ -40,8 +40,15 @@ $(document).ready(function() {
       url: '/establishments',
       type: 'POST',
       dataType: 'json',
-      data: { establishment: { name: object.name, address: object.vicinity, place_id: object.place_id, lat: object.geometry.location.k, long: object.geometry.location.D } }
-    });
+      data: { 
+        establishment: { 
+          name: object.name, address: object.vicinity, place_id: object.place_id, lat: object.geometry.location.k, long: object.geometry.location.D 
+        }
+      }
+    }).always(function(response) {
+      console.log(response)
+      window.location.pathname = response.responseText;
+    })
   });
 
 });

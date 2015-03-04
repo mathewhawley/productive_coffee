@@ -3,12 +3,8 @@ class Establishment < ActiveRecord::Base
   has_many :reviews
 
   def average_ratings(column)
-    if reviews.empty?
-      "Not Reviewed"
-    else
-      values = reviews.map { |value| value[column] }.compact
-      ((values.inject(:+).to_f)/values.length).round(0)
-    end
+    values = reviews.map { |value| value[column] }.compact
+    return 'no rating' if values.empty?
+    ((values.inject(:+).to_f)/values.length).round(0)
   end
-
 end

@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
   
   def new
     @establishment = Establishment.find(params[:establishment_id])
@@ -11,7 +12,7 @@ class ReviewsController < ApplicationController
     overall_rating = Review.review_overall_rating(params)
     @review.update_attributes(overall_rating: overall_rating)
     if @review.save
-      redirect_to "/establishments/#{@establishment.id}"
+      redirect_to @establishment
     else
       render 'new'
     end
