@@ -1,3 +1,4 @@
+%input{id: "#{@establishment.id}", type: 'hidden'}
 %h1= @establishment.name
 %h3= @establishment.description
 %h3= @establishment.address
@@ -16,10 +17,12 @@
   %h2 Reviews
   %ul.reviews
     - @establishment.reviews.each do |review|
-      %li= review.user.first_name
-      %p= review.updated_at
-      %p= review.content
-      %p= review.overall_rating
+      %div{id: "review-#{review.id}"}
+        %li= review.user.first_name
+        %p= review.updated_at
+        %p= review.content
+        %p= review.overall_rating
+        %button{id: "delete-review", value: "#{review.id}"} Delete
 - else
   %h2 No Reviews Yet
 
