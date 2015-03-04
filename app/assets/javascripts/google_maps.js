@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   function initialize() {
     var mapOptions = {
-      center: new google.maps.LatLng(51.500152, -0.126236),
+      center: new google.maps.LatLng(51.520921, -0.10643),
       zoom: 13,
       zoomControl: true,
       zoomControlOptions: {
@@ -27,7 +27,8 @@ $(document).ready(function(){
         console.log(position);
         var marker = new google.maps.Marker({
           position: position,
-          map: map
+          map: map,
+          title: establishment.name
         });
       });
     });
