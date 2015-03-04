@@ -1,3 +1,12 @@
+/* Nav */
+
+.has-form {
+  width: 250px;
+}
+
+
+/* Buttons */
+
 .button {
   font-weight: lighter;
   letter-spacing: .02rem;

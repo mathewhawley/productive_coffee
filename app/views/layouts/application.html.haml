@@ -15,6 +15,11 @@
             %h1= link_to 'Productive Coffee', root_path
         
         %section.top-bar-section
+          %ul.left
+            .has-form
+              = form_tag('/search', method: :get) do
+                = text_field_tag :q, nil, placeholder: 'Search establishments'
+
           %ul.right
             %li.has-dropdown
               - if user_signed_in?
@@ -28,7 +33,7 @@
                   %li= link_to('Login', new_user_session_path)
                   %li.active= link_to('Register', new_user_registration_path)
 
-      = form_tag('/search', method: :get) do
-        = text_field_tag :q, nil, placeholder: 'Search establishments'
+      
     = yield
+
 
