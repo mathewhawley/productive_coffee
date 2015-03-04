@@ -9,6 +9,33 @@ body, html, #map-canvas {
   max-width: inherit;
 }
 
+
+
+/* Homepage modal */
+
+.reveal-modal {
+  width: 50%;
+  text-align: center;
+  background-color: rgb(38, 38, 38);
+}
+
+.reveal-modal h2 {
+  color: #fff;
+  font-weight: lighter;
+  letter-spacing: 0.05rem;
+}
+
+.reveal-modal p {
+  color: #fff;
+  font-weight: lighter;
+  letter-spacing: 0.05rem;
+  margin-bottom: 0;
+}
+
+
+
+/* List all establishments button */
+
 .all-establishments-button {
   position: fixed;
   bottom: 20px;
