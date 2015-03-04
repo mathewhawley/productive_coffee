@@ -37,7 +37,7 @@ $(document).ready(function(){
           title: establishment.name
         });
 
-        var infoWindowContent = '<div id="info-window-content">' + '<a href="http://localhost:3000/establishments/' + establishment.id + '"><h3>' + establishment.name + '</h3></a>' + '</div>';
+        var infoWindowContent = '<div id="info-window-content">' + '<a href="' + window.location.origin + '/establishments/' + establishment.id + '"><h3>' + establishment.name + '</h3></a>' + '<p>' + establishment.address + '</p>' + '</div>';
 
         var infowindow = new google.maps.InfoWindow({
             content: infoWindowContent
@@ -46,7 +46,7 @@ $(document).ready(function(){
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.open(map, marker);
         });
-        
+
       });
     });
   }
