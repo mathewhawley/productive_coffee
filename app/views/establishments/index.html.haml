@@ -1,3 +1,8 @@
 %h2 All establishments
 
 #all-establishments
+  - @establishments.each do |establishment|
+    .establishment-card
+      %h3= link_to establishment.name, establishment_path(establishment)
+      %p= "Description: #{establishment.description}"
+      %p= "Address: #{establishment.address}"
