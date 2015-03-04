@@ -25,6 +25,10 @@ $(document).ready(function(){
       $.each(response, function(index, establishment){
         var position = new google.maps.LatLng(establishment.lat, establishment.long);
         console.log(position);
+        var marker = new google.maps.Marker({
+          position: position,
+          map: map
+        });
       });
     });
   }
