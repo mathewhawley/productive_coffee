@@ -1,7 +1,7 @@
 class EstablishmentsController < ApplicationController
 
   def index
-    @establishments = Establishment.all
+    @establishments = Establishment.all.order('created_at DESC')
   end
 
   def show
