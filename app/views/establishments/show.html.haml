@@ -3,24 +3,29 @@
 %h3= @establishment.address
 %h3= @establishment.phone_number
 %h3= @establishment.email
-#overall-ratings
-  %h2= "Overall: #{@overall_rating}"
-  %h2= "Power: #{@power_rating}"
-  %h2= "Wifi: #{@wifi_rating}"
-  %h2= "Coffee: #{@coffee_rating}"
-  %h2= "Food: #{@food_rating}"
-  %h2= "Service: #{@service_rating}"
-  %h2= "Noise Level: #{@noise_level_rating}"
+- unless @establishment.reviews.empty?
+  #overall-ratings
+    %h2= "Overall: #{@overall_rating}"
+    %h2= "Power: #{@power_rating}"
+    %h2= "Wifi: #{@wifi_rating}"
+    %h2= "Coffee: #{@coffee_rating}"
+    %h2= "Food: #{@food_rating}"
+    %h2= "Service: #{@service_rating}"
+    %h2= "Noise Level: #{@noise_level_rating}"
 
--# %h2= link_to(@establishment.user.first_name, user_path(@establishment.user.id))
-%h2 Reviews
-%ul.reviews
-  - unless @establishment.reviews.empty?
+  %h2 Reviews
+  %ul.reviews
     - @establishment.reviews.each do |review|
       %li= review.user.first_name
       %p= review.updated_at
       %p= review.content
       %p= review.overall_rating
+- else
+  %h2 No Reviews Yet
+
+
+-# %h2= link_to(@establishment.user.first_name, user_path(@establishment.user.id))
+
  
 
 

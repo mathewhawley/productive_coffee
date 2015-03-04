@@ -22,7 +22,11 @@ class EstablishmentsController < ApplicationController
   def create
     @establishment = Establishment.create params.require(:establishment).permit(:name, :address, :place_id, :lat, :long)
     # render json: @establishment, status: :created
-    redirect_to @establishment
+    if @establishment.save
+      redirect_to establishments_path
+    else
+      render 'index'
+    end
   end
 
 end
