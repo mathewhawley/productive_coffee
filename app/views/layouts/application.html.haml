@@ -33,5 +33,6 @@
                 %ul.dropdown
                   %li= link_to('Login', new_user_session_path)
                   %li.active= link_to('Register', new_user_registration_path)
+            %li.active= link_to 'All Establishments', establishments_path
 
     = yield
