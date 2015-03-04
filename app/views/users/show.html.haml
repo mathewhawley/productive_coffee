@@ -1,9 +1,9 @@
+= image_tag(@user.profile_pic.thumb)
 %h1= @user.first_name + ' ' + @user.last_name
 %p= @user.bio
 %ul 
   %li= @user.occupation
   %li= @user.email
-  %li= image_tag(@user.profile_pic.thumb)
 
 %h2 Establishments added:
 - @user.establishments.each do |establishment|
