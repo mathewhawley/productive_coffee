@@ -3,7 +3,6 @@ class EstablishmentsController < ApplicationController
 
   def index
     @establishments = Establishment.all.order('created_at DESC')
-    @overall_rating = @establishment.average_ratings(:overall_rating)
   end
 
   def show
