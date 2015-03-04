@@ -12,14 +12,15 @@
   %h2= "Service: #{@service_rating}"
   %h2= "Noise Level: #{@noise_level_rating}"
 
-%h2= link_to(@establishment.user.first_name, user_path(@establishment.user.id))
+-# %h2= link_to(@establishment.user.first_name, user_path(@establishment.user.id))
 %h2 Reviews
 %ul.reviews
-  - @establishment.reviews.each do |review|
-    %li= review.user.first_name
-    %p= review.updated_at
-    %p= review.content
-    %p= review.overall_rating
+  - unless @establishment.reviews.empty?
+    - @establishment.reviews.each do |review|
+      %li= review.user.first_name
+      %p= review.updated_at
+      %p= review.content
+      %p= review.overall_rating
  
 
 
