@@ -5,8 +5,8 @@ body, html, #map-canvas {
   padding: 0;
 }
 
-#map-canvas {
-  position: relative;
+#map-canvas img {
+  max-width: inherit;
 }
 
 .all-establishments-button {
