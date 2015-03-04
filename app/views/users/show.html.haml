@@ -4,7 +4,9 @@
 %ul 
   %li= @user.occupation
   %li= @user.email
+= link_to('Edit Profile', edit_user_registration_path)
 
 %h2 Establishments added:
 - @user.establishments.each do |establishment|
   %h3= link_to(establishment.name)
+
