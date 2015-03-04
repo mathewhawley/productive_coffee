@@ -12,7 +12,7 @@
       %h2.logo Productive Coffee
       = form_tag('/search', method: :get) do
         = text_field_tag :q, nil, placeholder: 'Search establishments'
-    #map-canvas
+      = link_to 'View All Cafes', establishments_path
     = yield
 
   
