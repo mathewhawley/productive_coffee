@@ -12,7 +12,18 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   // addMarker(map);
-
 }
+
+$(document).ready(function(){
+  console.log('blah');
+  $.ajax({
+    type: 'GET',
+    url: '/',
+    dataType: 'json'
+  }).done(function(response){
+    console.log(response);
+  });
+
+});
 
 google.maps.event.addDomListener(window, 'load', initialize);
