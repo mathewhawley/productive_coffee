@@ -3,7 +3,8 @@
 %ul 
   %li= @user.occupation
   %li= @user.email
+  %li= image_tag(@user.profile_pic.thumb)
 
 %h2 Establishments added:
 - @user.establishments.each do |establishment|
-  %h3= establishment.name
+  %h3= link_to(establishment.name)
