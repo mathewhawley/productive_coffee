@@ -1,5 +1,5 @@
 class EstablishmentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
     @establishments = Establishment.all.order('created_at DESC')
