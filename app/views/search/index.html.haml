@@ -11,7 +11,7 @@
 #database-search-results
   - @results.each do |establishment|
     .establishment-card
-      %h3= establishment.name
+      %h3= link_to establishment.name, establishment_path(establishment)
       %p= establishment.address
       - if establishment.description
         %p= establishment.description
