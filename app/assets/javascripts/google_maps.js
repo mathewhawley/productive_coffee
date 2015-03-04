@@ -14,6 +14,8 @@ $(document).ready(function(){
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     addMarker(map);
+
+    
   }
 
   function addMarker(map) {
@@ -24,11 +26,17 @@ $(document).ready(function(){
     }).done(function(response){
       $.each(response, function(index, establishment){
         var position = new google.maps.LatLng(establishment.lat, establishment.long);
-        console.log(position);
         var marker = new google.maps.Marker({
           position: position,
           map: map,
           title: establishment.name
+        });
+        var infoWindowContent = '<div id="info-window-content">' + '<p>' + establishment.name + '</p>' + '</div>';
+        var infowindow = new google.maps.InfoWindow({
+            content: infoWindowContent
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(map, marker);
         });
       });
     });
