@@ -10,6 +10,12 @@
 
 #database-search-results
   - @results.each do |establishment|
-    %h3= establishment.name
+    .establishment-card
+      %h3= establishment.name
+      %p= establishment.address
+      - if establishment.description
+        %p= establishment.description
+      - if establishment.url
+        %p= link_to establishment.url, establishment.url
 
 #api-search-results
