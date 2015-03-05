@@ -10,12 +10,30 @@ $(document).ready(function() {
   function callback(results, status) {
     response = results;
 
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
+    var databaseEstablishments = [];
+
+    $.ajax({
+      type: 'GET',
+      url: '/establishments',
+      dataType: 'json'
+    }).done(function(response) {
+      $.each(response, function(index, establishment) {
+        databaseEstablishments.push(establishment.address);
+      })
+      console.log(databaseEstablishments)
+    }).done(function(){
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
         var place = results[i];
-        $('<div>' + '<h2>' + place.name + '</h2>' + '<p>' + place.vicinity + '</p>' + '<button data-id="' + i + '"' + 'id="add-cafe">Add Cafe</button>' + '</div>' ).appendTo('#api-search-results');
+          if ($.inArray(place.vicinity, databaseEstablishments) === -1) {
+            $('<div>' + '<h2>' + place.name + '</h2>' + '<p>' + place.vicinity + '</p>' + '<button data-id="' + i + '"' + 'id="add-cafe">Add Cafe</button>' + '</div>' ).appendTo('#api-search-results');
+          } else {
+            console.log('place IS matched')
+            console.log(place.vicinity)
+          }
+        } 
       }
-    }
+    }); // closing done
   }
 
   var service = new google.maps.places.PlacesService(apiSearchResults);
@@ -46,7 +64,6 @@ $(document).ready(function() {
         }
       }
     }).always(function(response) {
-      console.log(response)
       window.location.pathname = response.responseText;
     })
   });
