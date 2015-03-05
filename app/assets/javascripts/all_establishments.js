@@ -10,6 +10,21 @@ function showEstablishments() {
   });
 }
 
+function showOverallRating(){
+  var elements = $('.index-rating')
+  $.each(elements, function(index, element){
+    // var word = element.id;
+    // var value = element.value;
+    var num = $(element).attr('id');
+    var value = $(element).attr('value');
+  
+    for (var i = 1; i <= value; i++) {
+      $('<i class="fa fa-star fa-1x"></i>').appendTo('#'+num);
+    }
+  });
+};
+
 $(document).ready(function() {
   showEstablishments();
+  showOverallRating();
 });

@@ -50,3 +50,7 @@
 .establishment-card p {
   margin: 0;
 }
+
+.ratings#overall {
+  font-size: 1rem;
+}
