@@ -3,10 +3,9 @@ $(document).ready(function(){
   console.log()
 
   $('.fa-plug').on('click', function(){
-    $('.fa-plug').removeClass('chosen-rating');
-    $(this).toggleClass('chosen-rating');
-    $(this).prevAll().toggleClass('chosen-rating');
-    console.log($('.chosen-rating').length);
+    $(this).prevAll().andSelf().addClass('chosen-rating');
+    $(this).nextAll().removeClass('chosen-rating');
+    console.log('Power rating: ' + $('.fa-plug.chosen-rating').length);
   });
 
   $('.fa-wifi').on('click', function(){
