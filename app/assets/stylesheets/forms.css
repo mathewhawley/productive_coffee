@@ -38,3 +38,7 @@ i {
 .field.rating:nth-child(2n) {
   margin-right: 0;
 }
+
+.field.review-content {
+  rows: 50;
+}
