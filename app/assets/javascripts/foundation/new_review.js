@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-  console.log()
+  function toggleSelection() {
+
+  }
 
   $('.fa-plug').on('click', function(){
     $(this).prevAll().andSelf().addClass('chosen-rating');
@@ -9,33 +11,33 @@ $(document).ready(function(){
   });
 
   $('.fa-wifi').on('click', function(){
-    $('.fa-wifi').removeClass('chosen-rating');
-    $(this).toggleClass('chosen-rating');
-    $(this).prevAll().toggleClass('chosen-rating');
+    $(this).prevAll().andSelf().addClass('chosen-rating');
+    $(this).nextAll().removeClass('chosen-rating');
+    console.log('Wifi rating: ' + $('.fa-wifi.chosen-rating').length);
   });
 
   $('.fa-coffee').on('click', function(){
-    $('.fa-coffee').removeClass('chosen-rating');
-    $(this).toggleClass('chosen-rating');
-    $(this).prevAll().toggleClass('chosen-rating');
+    $(this).prevAll().andSelf().addClass('chosen-rating');
+    $(this).nextAll().removeClass('chosen-rating');
+    console.log('Coffee rating: ' + $('.fa-coffee.chosen-rating').length);
   });
 
   $('.fa-cutlery').on('click', function(){
-    $('.fa-cutlery').removeClass('chosen-rating');
-    $(this).toggleClass('chosen-rating');
-    $(this).prevAll().toggleClass('chosen-rating');
+    $(this).prevAll().andSelf().addClass('chosen-rating');
+    $(this).nextAll().removeClass('chosen-rating');
+    console.log('Food rating: ' + $('.fa-cutlery.chosen-rating').length);
   });
 
   $('.fa-smile-o').on('click', function(){
-    $('.fa-smile-o').removeClass('chosen-rating');
-    $(this).toggleClass('chosen-rating');
-    $(this).prevAll().toggleClass('chosen-rating');
+    $(this).prevAll().andSelf().addClass('chosen-rating');
+    $(this).nextAll().removeClass('chosen-rating');
+    console.log('Service rating: ' + $('.fa-smile-o.chosen-rating').length);
   });
 
   $('.fa-volume-up').on('click', function(){
-    $('.fa-volume-up').removeClass('chosen-rating');
-    $(this).toggleClass('chosen-rating');
-    $(this).prevAll().toggleClass('chosen-rating');
+    $(this).prevAll().andSelf().addClass('chosen-rating');
+    $(this).nextAll().removeClass('chosen-rating');
+    console.log('Noise rating: ' + $('.fa-volume-up.chosen-rating').length);
   });
 
 });
