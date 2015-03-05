@@ -1,4 +1,4 @@
-%input{id: "#{@establishment.id}", type: 'hidden'}
+%input{id: 'establishment-id', value: "#{@establishment.id}", type: 'hidden'}
 %h1= @establishment.name
 %h3= @establishment.description
 %h3= @establishment.address
@@ -19,10 +19,10 @@
     - @establishment.reviews.each do |review|
       %div{id: "review-#{review.id}"}
         %li= review.user.first_name
-        %p= review.updated_at
+        %p= review.updated_at.to_formatted_s(:long)
         %p= review.content
         %p= review.overall_rating
-        %button{id: "delete-review", value: "#{review.id}"} Delete
+        %button{id: "delete-review", value: "#{review.id}"}= link_to('Delete', establishment_review_path(@establishment, review.id), method: :delete)
 - else
   %h2 No Reviews Yet
 

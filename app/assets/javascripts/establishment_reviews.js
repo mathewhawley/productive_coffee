@@ -1,20 +1,23 @@
-$(document).ready(function(){
-  function deleteReview(id){
-    reviewId = $('#review-'+ id);
-    request("DELETE", "/tasks/" + taskId, null)
+// $(document).ready(function(){
+//   var reviewId = $('#delete-review').val();
+//   function deleteReview(reviewId){
+//     $.ajax({
+//       url: '/etablishments/' + $('#establishment-id').val() + '/reviews/' + reviewId,
+//       type: 'DELETE',
+//       dataType: "json"
+//     })
+//     .fail(function(response){
+//       console.log(response);
+//       // $('#review-'+ id).parent().remove();
+//     });
+//   }
+//   deleteReview(reviewId);
+//   // $('#review-' + reviewId).on("click", $('#delete-review'), deleteReview(reviewId) {
+//   //   console.log("clicked");
+//   //   console.log($(this).val());
+//   //});
+// });
 
-  $.ajax({
-    url: '/etablishments/' +  + 'reviews' + ($('#delete-review').val()),
-    method: method,
-    dataType: "json",
-    data: data
-  })
-  .done(function(){
-    $this.parent().remove();
-  });
-   
-  }
-  $('#review-'+ id).on("click", ".delete-review", deleteReview);
-});
+
 
 

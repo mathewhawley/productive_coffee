@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   
   def new
     @establishment = Establishment.find(params[:establishment_id])
@@ -17,6 +17,17 @@ class ReviewsController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    @review = Review.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to establishments_path }
+      format.json { render json: @review }
+    end
+    
+    @review.destroy
+    head :no_content, status: :ok
+  end 
 
 private
   def review_params
