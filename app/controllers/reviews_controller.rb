@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     @establishment = Establishment.find(params[:establishment_id])
     @review = Review.create(review_params)
     overall_rating = Review.review_overall_rating(params)
-    @review.update_attributes(overall_rating: overall_rating)
+    @review.update_attributes(overall: overall_rating)
     if @review.save
       redirect_to @establishment
     else

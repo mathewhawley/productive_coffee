@@ -21,7 +21,7 @@
         %li= review.user.first_name
         %p= review.updated_at.to_formatted_s(:long)
         %p= review.content
-        %p= review.overall_rating
+        %p= review.overall
         - if can? :destroy, @review
           %button{id: "delete-review", value: "#{review.id}"}= link_to('Delete', establishment_review_path(@establishment, review.id), method: :delete)
 - else
