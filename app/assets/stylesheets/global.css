@@ -1,7 +1,33 @@
+/* Body */
+
+body {
+  background-color: #f0f0f0;
+}
+
+
+
 /* Nav */
 
 .has-form {
   width: 250px;
+}
+
+
+
+/* Wrapper */
+
+#wrapper {
+  width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+
+
+/* Typography */
+
+p {
+  font-size: 0.9rem;
 }
 
 
@@ -11,4 +37,12 @@
 .button {
   font-weight: lighter;
   letter-spacing: .02rem;
+}
+
+
+
+/* Horizontal Rules */
+
+hr {
+  margin: 0 0 2rem 0;
 }

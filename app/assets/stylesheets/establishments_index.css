@@ -1,0 +1,50 @@
+/* Establishment Index Page Styles */
+
+.page-header {
+  margin: 0 0 1rem 0;
+  font-weight: lighter;
+}
+
+#listed-elements {
+  font-size: 0;
+}
+
+#listed-elements a {
+  display: inline-block;
+  width: 32.3%;
+  margin: 0 1.55% 1rem 0;
+  color: #000;
+}
+
+#listed-elements a:nth-child(3n) {
+  margin-right: 0;
+}
+
+.establishment-card {
+  vertical-align: top;
+  display: inline-block;
+  height: 320px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: .2rem;
+  transition: .4s;
+}
+
+.establishment-card:hover {
+  background-color: #e3e3e3;
+  transition: .4s;
+}
+
+.establishment-card img {
+  margin-bottom: .75rem;
+}
+
+.establishment-card h4 {
+  font-size: .92rem;
+  font-weight: bold;
+  color: rgb(0, 140, 180);
+}
+
+.establishment-card p {
+  margin: 0;
+}
