@@ -29,7 +29,7 @@ $(document).ready(function() {
         types: ['cafe']
       };
       service.nearbySearch(request, callback);
-      $('#database-search-results').hide();
+      $('.database-search').hide();
     }
   });
 
