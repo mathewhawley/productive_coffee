@@ -11,11 +11,25 @@
   margin-bottom: .5rem;
 }
 
-.field textarea {
+.field textarea, .field select {
   margin-bottom: 1rem;
 }
 
 #devise-button {
   font-size: 1rem;
   margin-bottom: .7rem;
+}
+
+i {
+  margin: 0 .1rem 1.5rem 0;
+}
+
+.field.rating {
+  display: inline-block;
+  width: 48%;
+  margin-right: 2%;
+}
+
+.field.rating:nth-child(2n) {
+  margin-right: 0;
 }

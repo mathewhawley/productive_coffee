@@ -9,21 +9,53 @@
     = form_for [@establishment, @review] do |f|
       = f.hidden_field :establishment_id, value: @establishment.id
       = f.hidden_field :user_id, value: current_user.id
-      = f.label 'Power'
-      = f.select :power, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Wifi'
-      = f.select :wifi, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Coffee'
-      = f.select :coffee, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Food'
-      = f.select :food, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Service'
-      = f.select :service, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Noise Level'
-      = f.select :noise_level, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Content'
-      = f.text_area :content
-      = f.submit
+      .field.rating
+        = f.label 'Power'
+        %i.fa.fa-plug.fa-2x
+        %i.fa.fa-plug.fa-2x
+        %i.fa.fa-plug.fa-2x
+        %i.fa.fa-plug.fa-2x
+        %i.fa.fa-plug.fa-2x
+      .field.rating
+        = f.label 'Wifi'
+        %i.fa.fa-wifi.fa-2x
+        %i.fa.fa-wifi.fa-2x
+        %i.fa.fa-wifi.fa-2x
+        %i.fa.fa-wifi.fa-2x
+        %i.fa.fa-wifi.fa-2x
+      .field.rating
+        = f.label 'Coffee'
+        %i.fa.fa-coffee.fa-2x
+        %i.fa.fa-coffee.fa-2x
+        %i.fa.fa-coffee.fa-2x
+        %i.fa.fa-coffee.fa-2x
+        %i.fa.fa-coffee.fa-2x
+      .field.rating
+        = f.label 'Food'
+        %i.fa.fa-cutlery.fa-2x
+        %i.fa.fa-cutlery.fa-2x
+        %i.fa.fa-cutlery.fa-2x
+        %i.fa.fa-cutlery.fa-2x
+        %i.fa.fa-cutlery.fa-2x
+      .field.rating
+        = f.label 'Service'
+        %i.fa.fa-smile-o.fa-2x
+        %i.fa.fa-smile-o.fa-2x
+        %i.fa.fa-smile-o.fa-2x
+        %i.fa.fa-smile-o.fa-2x
+        %i.fa.fa-smile-o.fa-2x
+      .field.rating
+        = f.label 'Noise Level'
+        %i.fa.fa-volume-up.fa-2x
+        %i.fa.fa-volume-up.fa-2x
+        %i.fa.fa-volume-up.fa-2x
+        %i.fa.fa-volume-up.fa-2x
+        %i.fa.fa-volume-up.fa-2x
+      .field
+        = f.label 'Content'
+        = f.text_area :content
+      .actions
+        = f.submit 'Submit Review', :class => 'button radius small', :id => 'devise-button'
       
 
 
