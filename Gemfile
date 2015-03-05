@@ -5,6 +5,7 @@ gem 'devise'
 gem 'ransack'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'font-awesome-less', '~> 4.2.0'
 
 gem 'cancancan', '~> 1.10'
 

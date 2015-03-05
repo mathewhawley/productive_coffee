@@ -1,6 +1,9 @@
 -# #myModal.reveal-modal{"data-reveal" => ""}
 -#   %form
 -# %a.close-reveal-modal ×
+
+
+
 = form_for [@establishment, @review] do |f|
   = f.hidden_field :establishment_id, value: @establishment.id
   = f.hidden_field :user_id, value: current_user.id
