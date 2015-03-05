@@ -1,5 +1,18 @@
 #map-canvas
 
-#welcome-message
-  %h2 Welcome to Productive Coffee!
-  %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mauris erat, dignissim nec suscipit non, porta eu sapien. Vestibulum justo leo, rhoncus eu convallis nec.
+  #welcome-message
+    %h2 Welcome to Productive Coffee!
+    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mauris erat, dignissim nec suscipit non, porta eu sapien. Vestibulum justo leo, rhoncus eu convallis nec.
+
+%h3 Most popular
+
+#listed-elements
+  - @top_three.each do |establishment|
+    %a{:href => "#{establishment_path(establishment)}"}
+      .establishment-card
+        = image_tag 'http://lorempixel.com/400/300/food'
+        %h4= establishment.name
+        %p= establishment.address
+        %p= establishment.average_ratings(:overall_rating)
+        - if establishment.url
+          %p= link_to establishment.url, establishment.url
