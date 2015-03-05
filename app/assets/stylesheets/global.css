@@ -12,6 +12,10 @@ body {
   width: 250px;
 }
 
+.has-form input {
+  border-radius: .25rem;
+}
+
 
 
 /* Wrapper */
