@@ -33,6 +33,7 @@ i {
   display: inline-block;
   width: 48%;
   margin-right: 2%;
+  margin-bottom: .8rem;
 }
 
 .field.rating:nth-child(2n) {

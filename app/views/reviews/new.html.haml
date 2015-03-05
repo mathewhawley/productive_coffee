@@ -7,8 +7,8 @@
   %hr/
   #form-area
     = form_for [@establishment, @review] do |f|
-      = f.hidden_field :establishment_id, value: @establishment.id
-      = f.hidden_field :user_id, value: current_user.id
+      = f.hidden_field :establishment_id, value: @establishment.id, :id => 'establishment-id'
+      = f.hidden_field :user_id, value: current_user.id, :id => 'current-user-id'
       .field.rating
         = f.label 'Power'
         %i.fa.fa-plug.fa-2x
@@ -55,7 +55,8 @@
         = f.label 'Content'
         = f.text_area :content
       .actions
-        = f.submit 'Submit Review', :class => 'button radius small', :id => 'devise-button'
+        .submit.button.radius.small#devise-button Submit Review
+        -# = f.submit 'Submit Review', :class => 'button radius small review-submit', :id => 'devise-button'
       
 
 
