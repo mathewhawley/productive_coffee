@@ -9,16 +9,7 @@ class EstablishmentsController < ApplicationController
 
   def show
     @establishment = Establishment.find(params[:id])
-
-    unless @establishment.reviews.none?
-      @overall_rating = @establishment.average_ratings(:overall_rating)
-      @power_rating = @establishment.average_ratings(:power)
-      @wifi_rating = @establishment.average_ratings(:wifi)
-      @coffee_rating = @establishment.average_ratings(:coffee)
-      @food_rating = @establishment.average_ratings(:food)
-      @service_rating = @establishment.average_ratings(:service)
-      @noise_level_rating = @establishment.average_ratings(:noise_level)
-    end
+    Review.review_attributes.each { |attr| instance_variable_set("@#{attr}_rating", @establishment.average_ratings(attr)) }
   end
 
   def create

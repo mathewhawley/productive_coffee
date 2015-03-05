@@ -2,6 +2,10 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :establishment
 
+  def self.review_attributes
+    %i{overall power wifi coffee food service noise_level}
+  end
+
 
   def self.review_overall_rating(params)
     values = [

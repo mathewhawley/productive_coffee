@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
-  load_and_authorize_resource :through => :establishment, only: [:create, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  authorize_resource :through => :establishment, only: [:create, :destroy]
+  
   
   # , param_method: :review_params
   
