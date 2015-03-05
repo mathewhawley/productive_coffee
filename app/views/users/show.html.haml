@@ -1,12 +1,21 @@
-= image_tag(@user.profile_pic.thumb)
-%h1= @user.first_name + ' ' + @user.last_name
-%p= @user.bio
-%ul 
-  %li= @user.occupation
-  %li= @user.email
-= link_to('Edit Profile', edit_user_registration_path)
+#wrapper.profile-page
+  
+  #user-panel
+    #user-info
+      = image_tag @user.profile_pic, :class => "profile-pic"
+      %h1= @user.first_name + ' ' + @user.last_name
+      %p= @user.bio
+      %p= @user.occupation
+      %p= @user.email
+      = link_to 'Edit Profile', edit_user_registration_path, :class => 'button small radius devise-button'
 
-%h2 Establishments added:
-- @user.establishments.each do |establishment|
-  %h3= link_to("#{establishment.name}", "/establishments/#{establishment.id}")
-
+  %h2.page-header Cafes added
+  %hr/
+  #listed-elements
+    - @user.establishments.each do |establishment|
+      %a{:href => "#{establishment_path(establishment)}"}
+        .establishment-card
+          = image_tag establishment.image
+          %h4= establishment.name
+          %p= establishment.address
+          %p= establishment.average_ratings(:overall)
