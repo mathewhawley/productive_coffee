@@ -1,4 +1,5 @@
-ul.ratings li {
+.ratings-list ul li {
   display: inline-block;
   list-style: none;
+  color: red;
 }

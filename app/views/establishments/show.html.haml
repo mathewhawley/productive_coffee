@@ -5,16 +5,21 @@
 %h3= @establishment.phone_number
 %h3= @establishment.email
 - unless @establishment.reviews.empty?
-  .all-ratings
-    %ul.ratings
-      .overall
-        %li{ id: "overall-text", value: "#{@overall_rating}"} Overall
-        -# %h2= "Power: #{@power_rating}"
-        -# %h2= "Wifi: #{@wifi_rating}"
-        -# %h2= "Coffee: #{@coffee_rating}"
-        -# %h2= "Food: #{@food_rating}"
-        -# %h2= "Service: #{@service_rating}"
-        -# %h2= "Noise Level: #{@noise_level_rating}"
+  .ratings-list
+    %ul#overall-ratings
+      %li{class: "ratings", id: "overall", value: "#{@overall_rating}"} Overall
+    %ul#power-ratings
+      %li{class: "ratings", id: "power", value: "#{@power_rating}"} Power
+    %ul#wifi-ratings
+      %li{class: "ratings", id: "wifi", value: "#{@wifi_rating}"} Wifi
+    %ul#coffee-ratings
+      %li{class: "ratings", id: "coffee", value: "#{@coffee_rating}"} Coffee  
+    %ul#food-ratings
+      %li{class: "ratings", id: "food", value: "#{@food_rating}"} Food
+    %ul#service-ratings
+      %li{class: "ratings", id: "service", value: "#{@service_rating}"} Service
+    %ul#noise-level-ratings
+      %li{class: "ratings", id: "noise-level", value: "#{@noise_level_rating}"} Noise Level
 
   %h2 Reviews
   %ul.reviews
