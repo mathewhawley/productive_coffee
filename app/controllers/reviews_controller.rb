@@ -19,14 +19,16 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @establishment = Establishment.find(params[:establishment_id])
     @review = Review.find(params[:id])
-    respond_to do |format|
-      format.html { redirect_to establishments_path }
-      format.json { render json: @review }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to establishments_path }
+    #   format.json { render json: @review }
+    # end
     
     @review.destroy
-    head :no_content, status: :ok
+    # head :no_content, status: :ok
+    redirect_to @establishment
   end 
 
 private
