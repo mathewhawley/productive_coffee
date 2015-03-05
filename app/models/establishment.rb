@@ -9,4 +9,10 @@ class Establishment < ActiveRecord::Base
     return 'no rating' if values.empty?
     ((values.inject(:+).to_f)/values.length).round(0)
   end
+
+  def self.most_popular(establishments)
+    hash = Hash[establishments.map {|establishment| [establishment.id, establishment.average_ratings(:overall_rating)]}]
+    hash.delete_if {|key, value| value == 'no rating'}
+    hash.sort_by {|key, value| value}.reverse
+  end
 end

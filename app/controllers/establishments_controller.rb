@@ -26,8 +26,8 @@ class EstablishmentsController < ApplicationController
   end
 
   private
-    def establishment_params
-      params.require(:establishment).permit(:name, :address, :place_id, :lat, :long, :user_id)
-    end
+  def establishment_params
+    params.require(:establishment).permit(:name, :address, :place_id, :lat, :long, :user_id)
+  end
 
 end

@@ -1,8 +1,14 @@
-body, html, #map-canvas {
+body, html {
   width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+#map-canvas {
+  position: relative;
+  height: 550px;
+  z-index: 1;
+  margin-bottom: 2rem;
 }
 
 #map-canvas img {
@@ -14,7 +20,7 @@ body, html, #map-canvas {
 /* Welcome message */
 
 #welcome-message {
-  position: fixed;
+  position: absolute;
   width: 650px;
   bottom: 30px;
   left: 50%;
@@ -22,6 +28,7 @@ body, html, #map-canvas {
   padding: 1.25rem 3rem 2rem;
   background-color: rgb(38, 38, 38);
   text-align: center;
+  z-index: 2;
 }
 
 #welcome-message h2 {
