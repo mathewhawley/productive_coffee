@@ -1,9 +1,7 @@
 $(document).ready(function() {
 
   var apiSearchResults = document.getElementById('api-search-results');
-
   var searchInput = document.getElementById('place');
-
   var london = new google.maps.LatLng(51.5072, 0.1275);
   var response;
 
@@ -20,7 +18,6 @@ $(document).ready(function() {
       $.each(response, function(index, establishment) {
         databaseEstablishments.push(establishment.address);
       })
-      console.log(databaseEstablishments)
     }).done(function(){
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
@@ -28,8 +25,6 @@ $(document).ready(function() {
           if ($.inArray(place.vicinity, databaseEstablishments) === -1) {
             $('<div>' + '<h2>' + place.name + '</h2>' + '<p>' + place.vicinity + '</p>' + '<button data-id="' + i + '"' + 'id="add-cafe">Add Cafe</button>' + '</div>' ).appendTo('#api-search-results');
           } else {
-            console.log('place IS matched')
-            console.log(place.vicinity)
           }
         } 
       }
