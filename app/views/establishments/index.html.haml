@@ -5,7 +5,7 @@
     - @establishments.each do |establishment|
       %a{:href => "#{establishment_path(establishment)}"}
         .establishment-card
-          = image_tag 'http://lorempixel.com/400/300/food'
+          = image_tag establishment.image
           %h4= establishment.name
           %p= establishment.address
           %p= establishment.average_ratings(:overall)
