@@ -8,7 +8,6 @@ body, html {
   position: relative;
   height: 550px;
   z-index: 1;
-  margin-bottom: 2rem;
 }
 
 #map-canvas img {
