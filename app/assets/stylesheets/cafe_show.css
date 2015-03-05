@@ -1,0 +1,4 @@
+ul.ratings li {
+  display: inline-block;
+  list-style: none;
+}
