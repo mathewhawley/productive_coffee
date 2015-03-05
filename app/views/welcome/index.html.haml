@@ -13,6 +13,6 @@
         = image_tag 'http://lorempixel.com/400/300/food'
         %h4= establishment.name
         %p= establishment.address
-        %p= establishment.average_ratings(:overall_rating)
+        %p= establishment.average_ratings(:overall)
         - if establishment.url
           %p= link_to establishment.url, establishment.url

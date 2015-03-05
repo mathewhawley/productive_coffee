@@ -1,7 +1,6 @@
 class EstablishmentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   authorize_resource only: [:create]
-  # param_method: :establishment_params
 
   def index
     @establishments = Establishment.all.order('created_at DESC')
