@@ -4,6 +4,10 @@ class EstablishmentsController < ApplicationController
 
   def index
     @establishments = Establishment.all.order('created_at DESC')
+    respond_to do |format|
+      format.html
+      format.json { render json: @establishments}
+    end
   end
 
   def show

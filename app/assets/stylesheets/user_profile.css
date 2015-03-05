@@ -1,0 +1,18 @@
+#wrapper.profile-page {
+  padding-top: 0;
+}
+
+#user-panel {
+  padding: 1.5rem;
+  background-color: #fff;
+  margin-bottom: 2rem;
+}
+
+#user-info {
+  width: 40%;
+}
+
+.profile-pic {
+  width: 200px;
+  border: 1px #f0f0f0 solid;
+}

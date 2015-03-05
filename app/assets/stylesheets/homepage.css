@@ -7,8 +7,6 @@ body, html {
 #map-canvas {
   position: relative;
   height: 550px;
-  z-index: 1;
-  margin-bottom: 2rem;
 }
 
 #map-canvas img {
@@ -20,21 +18,11 @@ body, html {
 /* Welcome message */
 
 #welcome-message {
-  position: absolute;
-  width: 650px;
-  bottom: 30px;
-  left: 50%;
-  margin-left: -325px;
-  padding: 1.25rem 3rem 2rem;
-  background-color: rgb(38, 38, 38);
   text-align: center;
-  z-index: 2;
+  width: 70%;
+  margin: 2.5rem auto 3rem;
 }
 
 #welcome-message h2 {
   font-weight: lighter;
-}
-
-#welcome-message h2, #welcome-message p {
-  color: #fff;
 }
