@@ -1,23 +1,24 @@
-#myModal.reveal-modal{"data-reveal" => ""}
-  %form
-    = form_for [@establishment, @review] do |f|
-      = f.hidden_field :establishment_id, value: @establishment.id
-      = f.hidden_field :user_id, value: current_user.id
-      = f.label 'Power'
-      = f.select :power, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Wifi'
-      = f.select :wifi, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Coffee'
-      = f.select :coffee, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Food'
-      = f.select :food, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Service'
-      = f.select :service, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Noise Level'
-      = f.select :noise_level, [nil, 1, 2, 3, 4, 5]
-      = f.label 'Content'
-      = f.text_area :content
-      = f.submit
-    %a.close-reveal-modal ×
+-# #myModal.reveal-modal{"data-reveal" => ""}
+-#   %form
+-# %a.close-reveal-modal ×
+= form_for [@establishment, @review] do |f|
+  = f.hidden_field :establishment_id, value: @establishment.id
+  = f.hidden_field :user_id, value: current_user.id
+  = f.label 'Power'
+  = f.select :power, [nil, 1, 2, 3, 4, 5]
+  = f.label 'Wifi'
+  = f.select :wifi, [nil, 1, 2, 3, 4, 5]
+  = f.label 'Coffee'
+  = f.select :coffee, [nil, 1, 2, 3, 4, 5]
+  = f.label 'Food'
+  = f.select :food, [nil, 1, 2, 3, 4, 5]
+  = f.label 'Service'
+  = f.select :service, [nil, 1, 2, 3, 4, 5]
+  = f.label 'Noise Level'
+  = f.select :noise_level, [nil, 1, 2, 3, 4, 5]
+  = f.label 'Content'
+  = f.text_area :content
+  = f.submit
+    
 
 
