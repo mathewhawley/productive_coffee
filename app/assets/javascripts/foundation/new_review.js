@@ -1,51 +1,53 @@
 $(document).ready(function(){
 
-  var powerRating;
-  var wifiRating;
-  var coffeeRating;
-  var foodRating;
-  var serviceRating;
-  var noiseRating;
+  var power = $('#power-rating');
+  var wifi = $('#wifi-rating');
+  var coffee = $('#coffee-rating');
+  var food = $('#food-rating');
+  var service = $('#service-rating');
+  var noise = $('#noise-rating');
 
   $('.fa-plug').on('click', function(){
     $(this).prevAll().andSelf().addClass('chosen-rating');
     $(this).nextAll().removeClass('chosen-rating');
-    powerRating = $('.fa-plug.chosen-rating').length;
+    var powerRating = $('.fa-plug.chosen-rating').length;
+    power.val(powerRating);
+    console.log(power.val());
   });
 
   $('.fa-wifi').on('click', function(){
     $(this).prevAll().andSelf().addClass('chosen-rating');
     $(this).nextAll().removeClass('chosen-rating');
-    wifiRating = $('.fa-wifi.chosen-rating').length;
+    var wifiRating = $('.fa-wifi.chosen-rating').length;
+    wifi.val(wifiRating);
   });
 
   $('.fa-coffee').on('click', function(){
     $(this).prevAll().andSelf().addClass('chosen-rating');
     $(this).nextAll().removeClass('chosen-rating');
-    coffeeRating = $('.fa-coffee.chosen-rating').length;
+    var coffeeRating = $('.fa-coffee.chosen-rating').length;
+    coffee.val(coffeeRating);
   });
 
   $('.fa-cutlery').on('click', function(){
     $(this).prevAll().andSelf().addClass('chosen-rating');
     $(this).nextAll().removeClass('chosen-rating');
-    foodRating = $('.fa-cutlery.chosen-rating').length;
+    var foodRating = $('.fa-cutlery.chosen-rating').length;
+    food.val(foodRating);
   });
 
   $('.fa-smile-o').on('click', function(){
     $(this).prevAll().andSelf().addClass('chosen-rating');
     $(this).nextAll().removeClass('chosen-rating');
-    serviceRating = $('.fa-smile-o.chosen-rating').length;
+    var serviceRating = $('.fa-smile-o.chosen-rating').length;
+    service.val(serviceRating);
   });
 
   $('.fa-volume-up').on('click', function(){
     $(this).prevAll().andSelf().addClass('chosen-rating');
     $(this).nextAll().removeClass('chosen-rating');
-    noiseRating = $('.fa-volume-up.chosen-rating').length;
-  });
-
-  $('.submit').on('click', function(e){
-    console.log($('#establishment-id').val());
-    console.log($('#current-user-id').val());
+    var noiseRating = $('.fa-volume-up.chosen-rating').length;
+    noise.val(noiseRating);
   });
 
 });

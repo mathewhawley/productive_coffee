@@ -11,6 +11,7 @@
       = f.hidden_field :user_id, value: current_user.id, :id => 'current-user-id'
       .field.rating
         = f.label 'Power'
+        = f.hidden_field :power, value: '', :id => 'power-rating'
         %i.fa.fa-plug.fa-2x
         %i.fa.fa-plug.fa-2x
         %i.fa.fa-plug.fa-2x
@@ -18,6 +19,7 @@
         %i.fa.fa-plug.fa-2x
       .field.rating
         = f.label 'Wifi'
+        = f.hidden_field :wifi, value: '', :id => 'wifi-rating'
         %i.fa.fa-wifi.fa-2x
         %i.fa.fa-wifi.fa-2x
         %i.fa.fa-wifi.fa-2x
@@ -25,6 +27,7 @@
         %i.fa.fa-wifi.fa-2x
       .field.rating
         = f.label 'Coffee'
+        = f.hidden_field :coffee, value: '', :id => 'coffee-rating'
         %i.fa.fa-coffee.fa-2x
         %i.fa.fa-coffee.fa-2x
         %i.fa.fa-coffee.fa-2x
@@ -32,6 +35,7 @@
         %i.fa.fa-coffee.fa-2x
       .field.rating
         = f.label 'Food'
+        = f.hidden_field :food, value: '', :id => 'food-rating'
         %i.fa.fa-cutlery.fa-2x
         %i.fa.fa-cutlery.fa-2x
         %i.fa.fa-cutlery.fa-2x
@@ -39,6 +43,7 @@
         %i.fa.fa-cutlery.fa-2x
       .field.rating
         = f.label 'Service'
+        = f.hidden_field :service, value: '', :id => 'service-rating'
         %i.fa.fa-smile-o.fa-2x
         %i.fa.fa-smile-o.fa-2x
         %i.fa.fa-smile-o.fa-2x
@@ -46,6 +51,7 @@
         %i.fa.fa-smile-o.fa-2x
       .field.rating
         = f.label 'Noise Level'
+        = f.hidden_field :noise_level, value: '', :id => 'noise-rating'
         %i.fa.fa-volume-up.fa-2x
         %i.fa.fa-volume-up.fa-2x
         %i.fa.fa-volume-up.fa-2x
@@ -55,8 +61,8 @@
         = f.label 'Content'
         = f.text_area :content
       .actions
-        .submit.button.radius.small#devise-button Submit Review
-        -# = f.submit 'Submit Review', :class => 'button radius small review-submit', :id => 'devise-button'
+        -# .submit.button.radius.small#devise-button Submit Review
+        = f.submit 'Submit Review', :class => 'button radius small review-submit', :id => 'devise-button'
       
 
 
