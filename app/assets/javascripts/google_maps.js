@@ -3,7 +3,7 @@ $(document).ready(function(){
   function initialize() {
 
     var mapOptions = {
-      center: new google.maps.LatLng(51.520921, -0.10643),
+      center: new google.maps.LatLng(51.511841, -0.106258),
       zoom: 13,
       styles: [
         {"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},
