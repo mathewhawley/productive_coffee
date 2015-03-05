@@ -28,6 +28,11 @@ class EstablishmentsController < ApplicationController
     end
   end
 
+  def update
+    @establishment = Establishment.find(params[:id])
+    
+  end
+
   private
   def establishment_params
     params.require(:establishment).permit(:name, :address, :place_id, :lat, :long, :user_id)

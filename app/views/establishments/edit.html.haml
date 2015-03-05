@@ -1,0 +1,48 @@
+#form-area
+
+  %h2
+    Add More Cafe Details
+  = form_for @establishment do |f|
+    = image_tag(establishment.image)
+    .field
+      = f.label 'Update Profile Pic'
+
+    -#   = f.file_field :profile_pic
+    -#   = f.hidden_field :profile_pic_cache
+    -# .field
+    -#   = f.label :first_name
+
+    -#   = f.text_field :first_name, autofocus: true
+    -# .field
+    -#   = f.label :last_name
+
+    -#   = f.text_field :last_name
+    -# .field
+    -#   = f.label :occupation
+
+    -#   = f.text_field :occupation
+    -# .field
+    -#   = f.label :bio
+
+    -#   = f.text_area :bio
+    -# .field
+    -#   = f.label :email
+
+    -#   = f.email_field :email, autofocus: true
+    -# - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    -#   %div
+    -#     Currently waiting confirmation for: #{resource.unconfirmed_email}
+    -# .field
+    -#   = f.label :password
+
+    -#   = f.password_field :password, autocomplete: "off", :placeholder => 'Leave blank if you don\'t want to change it'
+    -# .field
+    -#   = f.label :password_confirmation
+
+    -#   = f.password_field :password_confirmation, autocomplete: "off"
+    -# .field
+    -#   = f.label :current_password
+
+    -#   = f.password_field :current_password, autocomplete: "off", :placeholder => 'We need your current password to confirm your changes'
+    -# .actions
+    -#   = f.submit "Update", :class => 'button radius small', :id => 'devise-button'
