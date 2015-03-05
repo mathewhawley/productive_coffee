@@ -1,20 +1,30 @@
 $(document).ready(function(){
-  var element = $('#overall')
-  var starIcon = 'fa fa-star fa-1x'
-  // var power = $('#power-text')
+
+  var elements = $('.ratings')
+
+  $.each(elements, function(index, element){
+    
+    var id = element.id;
+    var value = element.value;
+    console.log(value);
+
+    // function showRatings(id, value, icon) {
+    //   for (var i = 1; i <= value; i++) {
+
+    //     console.log(id);
+    //     console.log(value);
+    //     console.log(icon);
+
+    //     $('<li id="'+element.id+'-rating"><i class="'+ starIcon +'"></i>').appendTo(id);
+    //   }
+    // }
+  });
+  // var starIcon = 'fa fa-star fa-1x'
+  // // var power = $('#power-text')
   
   // <i class="fa fa-power-off"></i>
-  function showRatings(id, value, icon) {
-    for (var i = 1; i <= value; i++) {
-
-      console.log(id);
-      console.log(value);
-      console.log(icon);
-
-      $('<li id="'+element.id+'-rating"><i class="'+ starIcon +'"></i>').appendTo(id);
-    }
-  }
-  showRatings(element, element.val(), starIcon);
+  
+  // showRatings(element, element.val(), starIcon);
 
 
   // switch(overall) {
