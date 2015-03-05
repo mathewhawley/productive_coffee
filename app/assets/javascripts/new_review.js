@@ -16,10 +16,12 @@ $(document).ready(function(){
   });
 
   $('.fa-wifi').on('click', function(){
+    debugger;
     $(this).prevAll().andSelf().addClass('chosen-rating');
     $(this).nextAll().removeClass('chosen-rating');
     var wifiRating = $('.fa-wifi.chosen-rating').length;
     wifi.val(wifiRating);
+    console.log(wifi.val());
   });
 
   $('.fa-coffee').on('click', function(){
@@ -27,6 +29,7 @@ $(document).ready(function(){
     $(this).nextAll().removeClass('chosen-rating');
     var coffeeRating = $('.fa-coffee.chosen-rating').length;
     coffee.val(coffeeRating);
+    console.log(coffee.val());
   });
 
   $('.fa-cutlery').on('click', function(){
@@ -34,6 +37,7 @@ $(document).ready(function(){
     $(this).nextAll().removeClass('chosen-rating');
     var foodRating = $('.fa-cutlery.chosen-rating').length;
     food.val(foodRating);
+    console.log(food.val());
   });
 
   $('.fa-smile-o').on('click', function(){
@@ -41,6 +45,7 @@ $(document).ready(function(){
     $(this).nextAll().removeClass('chosen-rating');
     var serviceRating = $('.fa-smile-o.chosen-rating').length;
     service.val(serviceRating);
+    console.log(service.val());
   });
 
   $('.fa-volume-up').on('click', function(){
@@ -48,6 +53,7 @@ $(document).ready(function(){
     $(this).nextAll().removeClass('chosen-rating');
     var noiseRating = $('.fa-volume-up.chosen-rating').length;
     noise.val(noiseRating);
+    console.log(noise.val());
   });
 
 });
