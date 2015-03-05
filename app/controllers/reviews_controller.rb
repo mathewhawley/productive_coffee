@@ -10,8 +10,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    binding.pry
-    nil
     @establishment = Establishment.find(params[:establishment_id])
     @review = Review.create(review_params)
     overall_rating = Review.review_overall_rating(params)
