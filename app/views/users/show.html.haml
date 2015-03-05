@@ -18,4 +18,4 @@
           = image_tag establishment.image
           %h4= establishment.name
           %p= establishment.address
-          %p= establishment.average_ratings(:overall)
+          %p{class: "index-rating", id: "#{establishment.id}", data: "fa fa-star fa-1x", value: "#{establishment.average_ratings(:overall)}"}
