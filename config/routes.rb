@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   devise_for :users
-  resources :establishments
   match 'establishments/reviews' => 'establishments#reviews', via: [:post]
   resources :users, only: [:show]
   get '/search', to: "search#index"
