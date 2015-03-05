@@ -22,6 +22,11 @@
 
 i {
   margin: 0 .1rem 1.5rem 0;
+  color: #ccc;
+}
+
+.chosen-rating {
+  color: rgb(51, 51, 51);
 }
 
 .field.rating {
