@@ -5,6 +5,7 @@ $(document).ready(function(){
     var mapOptions = {
       center: new google.maps.LatLng(51.511841, -0.106258),
       zoom: 13,
+      scrollwheel: false,
       styles: [
         {"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},
         {"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},
