@@ -20,9 +20,14 @@
   margin-bottom: .7rem;
 }
 
-i {
+.field.rating i {
   margin: 0 .1rem 1.5rem 0;
   color: #ccc;
+}
+
+.index-rating i {
+  margin-right: .15rem;
+  color: rgb(51, 51, 51);
 }
 
 .chosen-rating {

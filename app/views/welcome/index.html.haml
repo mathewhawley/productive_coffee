@@ -14,7 +14,7 @@
         .establishment-card
           = image_tag establishment.image
           %h4= establishment.name
-          %p= establishment.address
           %p{class: "index-rating", id: "#{establishment.id}", data: "fa fa-star fa-1x", value: "#{establishment.average_ratings(:overall)}"}
+          %p= establishment.address
           - if establishment.url
             %p= link_to establishment.url, establishment.url
