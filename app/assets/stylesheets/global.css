@@ -24,6 +24,14 @@ body {
 
 
 
+/* Typography */
+
+p {
+  font-size: 0.9rem;
+}
+
+
+
 /* Buttons */
 
 .button {

@@ -1,21 +1,19 @@
-%h2 Search Results
+#wrapper
 
-.api-search-message
-  %p Can't find what you're looking for? Help out your fellow users by adding it via the Google API!
+  %h2{ :class => 'page-header' } Search Results
+  %hr
+  .api-search-message.panel
+    %p Can't find what you're looking for? Help out your fellow users by adding it via the Google API!
+    %input.search-input{id: "place", name: "place", placeholder: "Search and add new cafes", type: "text"}
 
-  
-  %input.search-input{id: "place", name: "place", placeholder: "Search cafes", type: "text"}
-#results
+  #listed-elements
+    - @results.each do |establishment|
+      %a{:href => "#{establishment_path(establishment)}"}
+        .establishment-card
+          = image_tag 'http://lorempixel.com/400/300/food'
+          %h4= establishment.name
+          %p= establishment.address
+          - if establishment.url
+            %p= link_to establishment.url, establishment.url
 
-
-#database-search-results
-  - @results.each do |establishment|
-    .establishment-card
-      %h3= link_to establishment.name, establishment_path(establishment)
-      %p= establishment.address
-      - if establishment.description
-        %p= establishment.description
-      - if establishment.url
-        %p= link_to establishment.url, establishment.url
-
-#api-search-results
+  #api-search-results

@@ -5,18 +5,18 @@
   font-weight: lighter;
 }
 
-#all-establishments {
+#listed-elements {
   font-size: 0;
 }
 
-#all-establishments a {
+#listed-elements a {
   display: inline-block;
   width: 32.3%;
   margin: 0 1.55% 1rem 0;
   color: #000;
 }
 
-#all-establishments a:nth-child(3n) {
+#listed-elements a:nth-child(3n) {
   margin-right: 0;
 }
 
@@ -40,11 +40,11 @@
 }
 
 .establishment-card h4 {
-  font-size: 1.2rem;
+  font-size: .92rem;
+  font-weight: bold;
   color: rgb(0, 140, 180);
 }
 
 .establishment-card p {
-  font-size: .85rem;
   margin: 0;
 }
