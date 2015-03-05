@@ -7,19 +7,19 @@
 - unless @establishment.reviews.empty?
   .ratings-list
     %ul#overall-ratings
-      %li{class: "ratings", id: "overall", value: "#{@overall_rating}"} Overall
+      %li{class: "ratings", id: "overall", data: "fa fa-star fa-1x", value: "#{@overall_rating}"} Overall
     %ul#power-ratings
-      %li{class: "ratings", id: "power", value: "#{@power_rating}"} Power
+      %li{class: "ratings", id: "power", data: "fa fa-plug fa-1x", value: "#{@power_rating}"} Power
     %ul#wifi-ratings
-      %li{class: "ratings", id: "wifi", value: "#{@wifi_rating}"} Wifi
+      %li{class: "ratings", id: "wifi", data: "fa fa-wifi fa-1x", value: "#{@wifi_rating}"} Wifi
     %ul#coffee-ratings
-      %li{class: "ratings", id: "coffee", value: "#{@coffee_rating}"} Coffee  
+      %li{class: "ratings", id: "coffee", data: "fa fa-coffee fa-1x", value: "#{@coffee_rating}"} Coffee  
     %ul#food-ratings
-      %li{class: "ratings", id: "food", value: "#{@food_rating}"} Food
+      %li{class: "ratings", id: "food", data: "fa fa-cutlery fa-1x", value: "#{@food_rating}"} Food
     %ul#service-ratings
-      %li{class: "ratings", id: "service", value: "#{@service_rating}"} Service
+      %li{class: "ratings", id: "service", data: "fa fa-smile-o fa-1x", value: "#{@service_rating}"} Service
     %ul#noise-level-ratings
-      %li{class: "ratings", id: "noise-level", value: "#{@noise_level_rating}"} Noise Level
+      %li{class: "ratings", id: "noise-level", data: "fa fa-volume-up fa-1x", value: "#{@noise_level_rating}"} Noise Level
 
   %h2 Reviews
   %ul.reviews
