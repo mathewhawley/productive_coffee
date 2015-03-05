@@ -38,7 +38,7 @@ $(document).ready(function(){
           title: establishment.name
         });
 
-        var infoWindowContent = '<div id="info-window-content">' + '<a href="' + window.location.origin + '/establishments/' + establishment.id + '"><h3>' + establishment.name + '</h3></a>' + '<p>' + establishment.address + '</p>' + '</div>';
+        var infoWindowContent = '<div id="info-window-content">' + '<a href="' + window.location.origin + '/establishments/' + establishment.id + '"><h5>' + establishment.name + '</h5></a>' + '<p>' + establishment.address + '</p>' + '</div>';
 
         var infowindow = new google.maps.InfoWindow({
             content: infoWindowContent

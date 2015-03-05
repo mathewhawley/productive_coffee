@@ -1,3 +1,7 @@
 .api-search-message input {
   width: 400px;
 }
+
+.panel p {
+  margin-bottom: 1.25rem;
+}
