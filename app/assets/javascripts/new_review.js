@@ -16,7 +16,6 @@ $(document).ready(function(){
   });
 
   $('.fa-wifi').on('click', function(){
-    debugger;
     $(this).prevAll().andSelf().addClass('chosen-rating');
     $(this).nextAll().removeClass('chosen-rating');
     var wifiRating = $('.fa-wifi.chosen-rating').length;
