@@ -22,8 +22,8 @@
         %p= review.updated_at.to_formatted_s(:long)
         %p= review.content
         %p= review.overall_rating
-        - if can? :delete, review
-        %button{id: "delete-review", value: "#{review.id}"}= link_to('Delete', establishment_review_path(@establishment, review.id), method: :delete)
+        - if can? :destroy, @review
+          %button{id: "delete-review", value: "#{review.id}"}= link_to('Delete', establishment_review_path(@establishment, review.id), method: :delete)
 - else
   %h2 No Reviews Yet
 

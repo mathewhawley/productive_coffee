@@ -1,6 +1,7 @@
 class EstablishmentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  load_and_authorize_resource
+  load_and_authorize_resource only: [:create]
+  # param_method: :establishment_params
 
   def index
     @establishments = Establishment.all.order('created_at DESC')
@@ -32,5 +33,10 @@ class EstablishmentsController < ApplicationController
       render 'index'
     end
   end
+
+  private
+    def establishment_params
+      params.require(:establishment).permit(:name, :address, :place_id, :lat, :long, :user_id)
+    end
 
 end

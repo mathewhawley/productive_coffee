@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :configure_devise_params, if: :devise_controller?
+  rescue_from CanCan::AccessDenied do |exception|
+      redirect_to root_path, alert: "You can't access this page"
+    end
   
 
   def configure_devise_params

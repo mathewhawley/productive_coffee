@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
+  load_and_authorize_resource :through => :establishment, only: [:create, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  
+  # , param_method: :review_params
   
   def new
     @establishment = Establishment.find(params[:establishment_id])
@@ -7,6 +10,8 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    binding.pry
+    nil
     @establishment = Establishment.find(params[:establishment_id])
     @review = Review.create(review_params)
     overall_rating = Review.review_overall_rating(params)
