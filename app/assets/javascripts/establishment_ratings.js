@@ -9,4 +9,5 @@ $(document).ready(function(){
       $('<li id="'+word+'-rating"><i class="'+icon+'"></i></li>').appendTo('#'+word+'-ratings');
     }
   });
+});
   
