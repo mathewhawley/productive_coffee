@@ -9,7 +9,7 @@ class Establishment < ActiveRecord::Base
   end
 
   def self.most_popular(establishments)
-    hash = Hash[establishments.map {|establishment| [establishment.id, establishment.average_ratings(:overall_rating)]}]
+    hash = Hash[establishments.map {|establishment| [establishment.id, establishment.average_ratings(:overall)]}]
     hash.delete_if {|key, value| value == 'no rating'}
     hash.sort_by {|key, value| value}.reverse
   end
