@@ -36,7 +36,7 @@
 - else
   %h2 No Reviews Yet
   %h4 Be the First to Review!
-  %button{class: "button radius small", id: "devise-first-review"}= link_to('Add', new_establishment_review_path(@establishment))
+  = link_to 'Add Review', new_establishment_review_path(@establishment), :class => 'button radius small', :id => 'devise-button'
 
 
 -# %h2= link_to(@establishment.user.first_name, user_path(@establishment.user.id))
