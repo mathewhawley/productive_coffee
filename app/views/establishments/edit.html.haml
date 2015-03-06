@@ -21,4 +21,4 @@
       = f.label :phone_number
       = f.text_field :phone_number
     .actions
-      = f.submit "Update", action: establishment_path(@establishment), :class => 'button radius small', :id => 'devise-button'
+      = f.submit "Update", method: establishment_path(@establishment), :class => 'button radius small', :id => 'devise-button'
