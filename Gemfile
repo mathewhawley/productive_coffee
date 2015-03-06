@@ -1,10 +1,14 @@
 source 'https://rubygems.org'
 
+ruby '2.1.4'
+
 gem 'haml-rails'
 gem 'devise'
 gem 'ransack'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'rails_12factor', group: :production
+gem 'thin'
 
 gem 'cancancan', '~> 1.10'
 
