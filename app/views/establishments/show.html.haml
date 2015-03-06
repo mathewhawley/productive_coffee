@@ -1,50 +1,49 @@
-%input{id: 'establishment-id', value: "#{@establishment.id}", type: 'hidden'}
-%h1= @establishment.name
-%h3= @establishment.description
-%h3= @establishment.address
-%h3= @establishment.phone_number
-%h3= @establishment.email
-- unless @establishment.reviews.empty?
-  .ratings-list
-    %ul#overall-ratings
-      %li{class: "ratings", id: "overall", data: "fa fa-star fa-1x", value: "#{@overall_rating}"} Overall
-    %ul#power-ratings
-      %li{class: "ratings", id: "power", data: "fa fa-plug fa-1x", value: "#{@power_rating}"} Power
-    %ul#wifi-ratings
-      %li{class: "ratings", id: "wifi", data: "fa fa-wifi fa-1x", value: "#{@wifi_rating}"} Wifi
-    %ul#coffee-ratings
-      %li{class: "ratings", id: "coffee", data: "fa fa-coffee fa-1x", value: "#{@coffee_rating}"} Coffee  
-    %ul#food-ratings
-      %li{class: "ratings", id: "food", data: "fa fa-cutlery fa-1x", value: "#{@food_rating}"} Food
-    %ul#service-ratings
-      %li{class: "ratings", id: "service", data: "fa fa-smile-o fa-1x", value: "#{@service_rating}"} Service
-    %ul#noise-level-ratings
-      %li{class: "ratings", id: "noise-level", data: "fa fa-volume-up fa-1x", value: "#{@noise_level_rating}"} Noise Level
+#wrapper.profile-page
 
-  %h2 Reviews
-  %button{class: "button radius small", id: "devise-add-review"}= link_to('Add', new_establishment_review_path(@establishment))
+  %input{id: 'establishment-id', value: "#{@establishment.id}", type: 'hidden'}
+  .main-image-container
+    = image_tag @establishment.image, :id => 'cafe-main-image'
+  .establishment-header
+    %h2.page-header= @establishment.name
+    %p.address= @establishment.address
+    %hr/
 
-  %ul.reviews
-    - @establishment.reviews.each do |review|
-      %div{id: "review-#{review.id}"}
-        %li= review.user.first_name
-        %p= review.updated_at.to_formatted_s(:long)
-        %p= review.content
-        %p{class: "index-rating", id: "#{review.id}", data: "fa fa-star fa-1x", value: "#{review.overall}"}
-        - if can? :destroy, @review
-          %button{id: "delete-review", value: "#{review.id}"}= link_to('Delete', establishment_review_path(@establishment, review.id), method: :delete)
-- else
-  %h2 No Reviews Yet
-  %h4 Be the First to Review!
-  = link_to 'Add Review', new_establishment_review_path(@establishment), :class => 'button radius small', :id => 'devise-button'
+  %h3= @establishment.description
+  %h3= @establishment.phone_number
+  %h3= @establishment.email
+  - unless @establishment.reviews.empty?
+    .ratings-list.panel
+      %ul#overall-ratings
+        %li{class: "ratings", id: "overall", data: "fa fa-star fa-1x", value: "#{@overall_rating}"} Overall
+      %hr.rating-rule
+      %ul#power-ratings
+        %li{class: "ratings", id: "power", data: "fa fa-plug fa-1x", value: "#{@power_rating}"} Power
+      %ul#wifi-ratings
+        %li{class: "ratings", id: "wifi", data: "fa fa-wifi fa-1x", value: "#{@wifi_rating}"} Wifi
+      %ul#coffee-ratings
+        %li{class: "ratings", id: "coffee", data: "fa fa-coffee fa-1x", value: "#{@coffee_rating}"} Coffee  
+      %ul#food-ratings
+        %li{class: "ratings", id: "food", data: "fa fa-cutlery fa-1x", value: "#{@food_rating}"} Food
+      %ul#service-ratings
+        %li{class: "ratings", id: "service", data: "fa fa-smile-o fa-1x", value: "#{@service_rating}"} Service
+      %ul#noise-level-ratings
+        %li{class: "ratings", id: "noise-level", data: "fa fa-volume-up fa-1x", value: "#{@noise_level_rating}"} Noise Level
 
+    %h2 Reviews
+    %button{class: "button radius small", id: "devise-add-review"}= link_to('Add', new_establishment_review_path(@establishment))
 
--# %h2= link_to(@establishment.user.first_name, user_path(@establishment.user.id))
-
- 
-
-
-
-
-
-  
+    %ul.reviews
+      - @establishment.reviews.each do |review|
+        %div{id: "review-#{review.id}"}
+          %p{class: "index-rating", id: "#{review.id}", data: "fa fa-star fa-1x", value: "#{review.overall}"}
+          %p= review.content
+          %p= link_to review.user.first_name, user_path(review.user.id)
+          %p= review.updated_at.to_formatted_s(:long)
+          %hr.rating-rule
+          
+          - if can? :destroy, @review
+            %button{id: "delete-review", value: "#{review.id}"}= link_to('Delete', establishment_review_path(@establishment, review.id), method: :delete)
+  - else
+    %h2 No Reviews Yet
+    %h4 Be the First to Review!
+    = link_to 'Add Review', new_establishment_review_path(@establishment), :class => 'button radius small', :id => 'devise-button'

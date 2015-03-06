@@ -2,3 +2,51 @@
   display: inline-block;
   list-style: none;
 }
+
+.main-image-container {
+    position: relative;
+    width: 100%;
+    height: 450px;    
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+#cafe-main-image {
+    position: absolute;
+    max-width: 100%;
+    top: -18%;
+}
+
+.ratings-list ul {
+  margin: 0;
+}
+
+.reviews {
+  margin: 0;
+}
+
+.ratings {
+  margin-right: .5rem;
+}
+
+.ratings-list i {
+  margin-right: .2rem;
+  color: rgb(51, 51, 51);
+}
+
+.rating-rule {
+  margin: .7rem 0;
+}
+
+.establishment-header {
+  text-align: center;
+}
+
+.address {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.establishment-header .page-header {
+  margin-bottom: 0;
+}
