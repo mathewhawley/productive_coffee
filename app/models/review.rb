@@ -2,6 +2,8 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :establishment
 
+  validates :content, presence: true
+
   def self.review_attributes
     %i{overall power wifi coffee food service noise_level}
   end

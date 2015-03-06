@@ -19,6 +19,7 @@ class ReviewsController < ApplicationController
       redirect_to @establishment
     else
       render 'new'
+      flash[:notice] = "Please provide content for your review."
     end
   end
 
