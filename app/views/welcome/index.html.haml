@@ -7,14 +7,14 @@
     %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi bibendum vel massa vel pharetra. Duis vehicula egestas rutrum. Fusce eget hendrerit nisi, non ornare diam. Quisque ultricies enim sit amet purus consequat, non ornare neque auctor. Ut at lacus odio. Duis non sem purus. Proin sed ligula lorem. Donec mollis ligula quis viverra dictum.
 
   %h2.page-header Most popular
-  %hr/
-  #listed-elements
-    - @top_three.each do |establishment|
-      %a{:href => "#{establishment_path(establishment)}"}
-        .establishment-card
-          = image_tag establishment.image
-          %h4= establishment.name
-          %p{class: "index-rating", id: "#{establishment.id}", data: "fa fa-star fa-1x", value: "#{establishment.average_ratings(:overall)}"}
-          %p= establishment.address
-          - if establishment.url
-            %p= link_to establishment.url, establishment.url
+  -# %hr/
+  -# #listed-elements
+  -#   - @top_three.each do |establishment|
+  -#     %a{:href => "#{establishment_path(establishment)}"}
+  -#       .establishment-card
+  -#         = image_tag establishment.image
+  -#         %h4= establishment.name
+  -#         %p{class: "index-rating", id: "#{establishment.id}", data: "fa fa-star fa-1x", value: "#{establishment.average_ratings(:overall)}"}
+  -#         %p= establishment.address
+  -#         - if establishment.url
+  -#           %p= link_to establishment.url, establishment.url
