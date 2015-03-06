@@ -35,11 +35,11 @@
     %ul.reviews
       - @establishment.reviews.each do |review|
         %div{id: "review-#{review.id}"}
+          %hr.rating-rule
           %p{class: "index-rating", id: "#{review.id}", data: "fa fa-star fa-1x", value: "#{review.overall}"}
           %p= review.content
           %p= link_to review.user.first_name, user_path(review.user.id)
           %p= review.updated_at.to_formatted_s(:long)
-          %hr.rating-rule
           
           - if can? :destroy, @review
             %button{id: "delete-review", value: "#{review.id}"}= link_to('Delete', establishment_review_path(@establishment, review.id), method: :delete)
