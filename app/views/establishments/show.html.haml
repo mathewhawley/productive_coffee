@@ -30,7 +30,7 @@
         %li{class: "ratings", id: "noise-level", data: "fa fa-volume-up fa-1x", value: "#{@noise_level_rating}"} Noise Level
 
     %h2 Reviews
-    %button{class: "button radius small", id: "devise-add-review"}= link_to('Add', new_establishment_review_path(@establishment))
+    = link_to 'Add Review', new_establishment_review_path(@establishment), :class => 'button small radius', :id => 'devise-button'
 
     %ul.reviews
       - @establishment.reviews.each do |review|
