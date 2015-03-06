@@ -1,8 +1,9 @@
 -# #myModal.reveal-modal{"data-reveal" => ""}
 -#   %form
 -# %a.close-reveal-modal ×
-
 #wrapper
+  #notice= flash[:notice]
+  #error= flash[:error]
   %h2.page-header= "Review: #{@establishment.name}"
   %hr/
   #form-area
