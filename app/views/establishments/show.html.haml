@@ -35,6 +35,8 @@
           %button{id: "delete-review", value: "#{review.id}"}= link_to('Delete', establishment_review_path(@establishment, review.id), method: :delete)
 - else
   %h2 No Reviews Yet
+  %h4 Be the First to Review!
+  %button{class: "button radius small", id: "devise-first-review"}= link_to('Add', new_establishment_review_path(@establishment))
 
 
 -# %h2= link_to(@establishment.user.first_name, user_path(@establishment.user.id))
