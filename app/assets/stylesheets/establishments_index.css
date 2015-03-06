@@ -25,7 +25,6 @@
 .establishment-card {
   vertical-align: top;
   display: inline-block;
-
   padding: 1rem;
   background-color: #fff;
   border-radius: .2rem;
@@ -45,6 +44,7 @@
   font-size: .92rem;
   font-weight: bold;
   color: rgb(0, 140, 180);
+  margin-bottom: 0;
 }
 
 .establishment-card p {
