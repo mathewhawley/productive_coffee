@@ -30,9 +30,9 @@ $ rake db:create
 $ rake db:migrate
 $ rake db:seed
 ```
-Next, run a `$ bundle install` to install the necessary gems.
+Next, run a `bundle install` to install the necessary gems.
 
-Finally type in `$ rails s` to start the server.
+Finally type in `rails s` to start the server.
 
 This project uses the _Thin_ Ruby web server, which defaults to port 3000. Open your browser and navigate to: http://localhost:3000.
 
